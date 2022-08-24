@@ -1,0 +1,13 @@
+--- a/openwrt/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
++++ b/openwrt/target/linux/mediatek/mt7622/base-files/etc/board.d/02_network
+@@ -26,7 +26,9 @@
+ 		ucidef_set_interface_lan "eth0"
+ 		;;
+ 	xiaomi,redmi-router-ax6s)
+-		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3" wan
++		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4"
++		ucidef_add_switch "switch0" \
++			"1:lan" "2:lan" "3:lan" "4:lan" "6u@eth0"
+ 		;;
+ 	*)
+ 		ucidef_add_switch "switch0" \
