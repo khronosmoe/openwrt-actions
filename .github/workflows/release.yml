@@ -32,7 +32,9 @@ jobs:
       run: cd openwrt && ./scripts/feeds install -a
         
     - name: Patches
-      run: git apply --ignore-whitespace patches/*.patch
+      run: |
+        git apply --ignore-whitespace patches/*.patch
+        cp .config openwrt/.config
 
     - name: Make
       run: |
