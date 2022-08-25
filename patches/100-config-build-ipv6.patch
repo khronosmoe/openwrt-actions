@@ -1,0 +1,15 @@
+--- a/openwrt/config/Config-build.in
++++ b/openwrt/config/Config-build.in
+@@ -150,7 +150,11 @@
+ 		  Adds -g3 to the CFLAGS.
+ 
+ 	config IPV6
+-		def_bool y
++		bool
++		prompt "Enable IPv6 support in packages"
++		default y
++		help
++		  Enables IPv6 support in kernel (builtin) and packages.
+ 
+ 	comment "Stripping options"
+ 
